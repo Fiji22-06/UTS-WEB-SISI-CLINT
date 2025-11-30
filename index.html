@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">To-Do List</div>
+        
+        <div class="nav-menu">
+            <button id="nav-todo" class="nav-link active">List Tugas</button>
+            <button id="nav-calendar" class="nav-link">Kalender</button>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-filters" id="filter-container">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="pending">Belum</button>
+                <button class="filter-btn" data-filter="completed">Selesai</button>
+            </div>
+
+            <button id="theme-toggle" title="Ganti Tema">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <section id="view-todo">
+            <header>
+                <h1>To-Do List</h1>
+                <button id="notify-btn" title="Aktifkan Notifikasi">🔔 Aktifkan Pengingat</button>
+            </header>
+
+            <div class="stats-container">
+                <div class="stat-box pending">
+                    <span>Belum:</span>
+                    <span id="count-pending">0</span>
+                </div>
+                <div class="stat-box completed">
+                    <span>Selesai:</span>
+                    <span id="count-completed">0</span>
+                </div>
+            </div>
+
+            <form id="todo-form" class="input-group">
+                <input type="text" id="todo-input" placeholder="Tugas baru..." autocomplete="off">
+                <input type="date" id="todo-date" title="Tenggat Waktu">
+                
+                <button type="submit" id="add-btn">Tambah</button>
+                
+                <button type="button" id="clear-btn" title="Hapus Semua Data">close all</button>
+            </form>
+
+            <ul id="todo-list">
+                </ul>
+        </section>
+
+        <section id="view-calendar" class="hidden">
+            <header>
+                <h1>Kalender Tugas</h1>
+                <p>Jadwal tenggat waktu</p>
+            </header>
+
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <p id="current-month">September 2024</p>
+                    <div class="calendar-nav">
+                        <span id="prev-month">  &#10094;</span>
+                        <span id="next-month">&#10095;</span>
+                    </div>
+                </div>
+                <div class="calendar-grid" id="calendar-grid">
+                    </div>
+            </div>
+            
+            <button id="back-to-todo-btn" class="full-width-btn">Kembali ke List Tugas</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
